@@ -50,10 +50,8 @@
                 <h3 class="font-bold">
                     Daftar Produk
                 </h3>
-                
                 <div class="grid-cols-1 md:grid-cols-4 grid gap-x-10">
                     <div class="flex flex-col gap-y-5 col-span-2">
-
                         @forelse($productTransaction->transactionDetails as $detail)
                         <div class="item-card flex flex-row justify-between items-center">
                             <div class="flex flex-row items-center gap-x-3">
@@ -133,6 +131,7 @@
                 <hr class="my-3">
 
                 <!-- button konfirmasi -->
+                 @role('admin')
                 <form method="POST" action="{{ route('product_transactions.update', $productTransaction) }}">
                     @csrf
                     @method('PUT')
@@ -140,6 +139,7 @@
                         Konfirmasi Pembelian
                     </button>
                 </form>
+                @endrole
             </div>
         </div>
     </div>
