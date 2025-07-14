@@ -15,6 +15,15 @@
 
     <div class="flex flex-col items-center px-6 py-20 ">
       <img src="{{asset('assets/images/logosakusehat.png')}}" class="mb-[50px] w-[180px]" alt="">
+      @if($errors->any())
+          <div class="mb-4 text-red-600 bg-red-100 p-3 rounded">
+              <ul class="list-disc ml-4">
+                  @foreach($errors->all() as $error)
+                      <li>{{ $error }}</li>
+                  @endforeach
+              </ul>
+          </div>
+        @endif
       <form action="{{route('login')}}" method="POST" class="mx-auto max-w-[345px] w-full p-6 bg-rose-200 rounded-3xl mt-auto" id="deliveryForm">
         @csrf
         <div class="flex flex-col gap-5">
