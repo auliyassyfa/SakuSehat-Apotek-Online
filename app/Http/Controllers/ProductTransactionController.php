@@ -18,7 +18,7 @@ class ProductTransactionController extends Controller
     public function index()
     {
         //
-        $user = Auth::user();
+        $user = User::user();
 
         if($user->hasRole('buyer')){
             $product_transactions = $user->product_transactions()->orderBy('id','DESC')->get();

@@ -21,6 +21,6 @@ class ProductTransaction extends Model
 
     // melihat banyak produk yg dibeli
     public function transactionDetails(){
-        return $this->hasMany(transactionDetails::class);
+        return $this->hasMany(TransactionDetails::class);
     }
 }
