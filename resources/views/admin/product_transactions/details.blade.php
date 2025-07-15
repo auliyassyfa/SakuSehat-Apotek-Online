@@ -14,7 +14,7 @@
                 <div class="item-card flex flex-col gap-y-3 md:flex-row justify-between md:items-center">
                     <div class="flex flex-row items-center gap-x-3">
                         <div>
-                            <p class="text-base text-slate-500"> 
+                            <p class="text-base text-slate-500">
                                 Total Transaksi
                             </p>
                             <h3 class="font-bold">
@@ -23,7 +23,7 @@
                         </div>
                     </div>
                     <div>
-                        <p class="text-base text-slate-500"> 
+                        <p class="text-base text-slate-500">
                             Tanggal
                         </p>
                         <h3 class="font-bold">
@@ -43,7 +43,7 @@
                                 </p>
                             </span>
                         @endif
-    
+
                 </div>
                 <hr class="my-3">
 
@@ -60,12 +60,12 @@
                                     <h3 class="font-bold">
                                         {{$detail->product->name}}
                                     </h3>
-                                    <p class="text-base text-slate-500"> 
+                                    <p class="text-base text-slate-500">
                                         Rp {{$detail->product->price}}
                                     </p>
                                 </div>
                             </div>
-                            <p class="text-base text-slate-500"> 
+                            <p class="text-base text-slate-500">
                                 {{$detail->product->category->name}}
                             </p>
                         </div>
@@ -76,7 +76,7 @@
                             Detail Pembayaran
                         </h3>
                         <div class="item-card flex flex-row justify-between items-center">
-                            <p class="text-base text-slate-500"> 
+                            <p class="text-base text-slate-500">
                                 Alamat
                             </p>
                             <h3 class="tetx-xl font-bold text-indigo-950">
@@ -85,7 +85,7 @@
                         </div>
 
                         <div class="item-card flex flex-row justify-between items-center">
-                            <p class="text-base text-slate-500"> 
+                            <p class="text-base text-slate-500">
                                 Kota
                             </p>
                             <h3 class="tetx-xl font-bold text-indigo-950">
@@ -94,25 +94,25 @@
                         </div>
 
                         <div class="item-card flex flex-row justify-between items-center">
-                            <p class="text-base text-slate-500"> 
+                            <p class="text-base text-slate-500">
                                 Nomor Telepon
                             </p>
                             <h3 class="tetx-xl font-bold text-indigo-950">
                                 {{$productTransaction->phone_number}}
                             </h3>
                         </div>
-                                                
+
                         <div class="item-card flex flex-row justify-between items-center">
-                            <p class="text-base text-slate-500"> 
+                            <p class="text-base text-slate-500">
                                 Kode Pos
                             </p>
                             <h3 class="tetx-xl font-bold text-indigo-950">
                                 {{$productTransaction->post_code}}
                             </h3>
                         </div>
-                                                
+
                         <div class="item-card flex flex-col items-start">
-                            <p class="text-base text-slate-500"> 
+                            <p class="text-base text-slate-500">
                                 Catatan
                             </p>
                             <h3 class="tetx-lg font-bold text-indigo-950">
@@ -131,7 +131,7 @@
                 <hr class="my-3">
 
                 <!-- button konfirmasi -->
-                 @role('admin')
+                 @role('owner')
                 <form method="POST" action="{{ route('product_transactions.update', $productTransaction) }}">
                     @csrf
                     @method('PUT')
