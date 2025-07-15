@@ -6,7 +6,7 @@ use App\Models\ProductTransaction;
 use App\Models\TransactionDetails;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use App\Models\User;
+// use App\Models\User;
 use Illuminate\Validation\ValidationException;
 use Illuminate\Support\Facades\DB;
 
@@ -18,7 +18,7 @@ class ProductTransactionController extends Controller
     public function index()
     {
         //
-        $user = User::user();
+        $user = Auth::user();
 
         if($user->hasRole('buyer')){
             $product_transactions = $user->product_transactions()->orderBy('id','DESC')->get();
@@ -72,7 +72,7 @@ class ProductTransactionController extends Controller
             $grandTotalCents = $subTotalCents + $deliveryFeeCents;
 
             $grandTotal = $grandTotalCents / 100;
-            
+
             $validated['user_id'] = $user->id;
             $validated['total_amount'] = $grandTotal;
             $validated['is_paid'] = false;
@@ -105,12 +105,12 @@ class ProductTransactionController extends Controller
             throw $error;
        }
     }
-    
+
 
     /**
      * Display the specified resource.
      */
-    public function show(productTransaction $productTransaction)
+    public function show(ProductTransaction $productTransaction)
     {
         //mengambil seluruh data produk(transaksi details) berdasarkan id
         $productTransaction = ProductTransaction::with('transactionDetails.product')->find($productTransaction->id);
@@ -122,7 +122,7 @@ class ProductTransactionController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(productTransaction $productTransaction)
+    public function edit(ProductTransaction $productTransaction)
     {
         //
     }
@@ -130,7 +130,7 @@ class ProductTransactionController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, productTransaction $productTransaction)
+    public function update(Request $request, ProductTransaction $productTransaction)
     {
         //
         $productTransaction->update([
@@ -142,7 +142,7 @@ class ProductTransactionController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(productTransaction $productTransaction)
+    public function destroy(ProductTransaction $productTransaction)
     {
         //
     }

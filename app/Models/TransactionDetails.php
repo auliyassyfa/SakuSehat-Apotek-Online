@@ -10,18 +10,19 @@ class TransactionDetails extends Model
 {
     use HasFactory;
 
-    //memasukkan seluruh data ke model
     protected $guarded = [
-        'id', //id tidak dimasukkan
+        'id',
     ];
 
-    // mengetahui detail produk
-    public function productTransaction(){
-        return $this->BelongsTo(ProductTransaction::class);
+    // mengetahui transaksi induknya
+    public function productTransaction(): BelongsTo
+    {
+        return $this->belongsTo(ProductTransaction::class);
     }
 
-    // mengetahui detail produk
-    public function product(){
-        return $this->BelongsTo(Product::class);
+    // mengetahui produk terkait
+    public function product(): BelongsTo
+    {
+        return $this->belongsTo(Product::class);
     }
 }
