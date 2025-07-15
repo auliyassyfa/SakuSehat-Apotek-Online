@@ -1,4 +1,3 @@
-<!-- file ini untuk menampilkan data kategori -->
 <x-app-layout>
     <x-slot name="header">
         <div class="flex flex-row justify-between items-center ">
@@ -10,7 +9,6 @@
             </a>
         </div>
     </x-slot>
-
     <div class="py-12">
         <div class="max-w-3xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white flex flex-col gap-y-5 overflow-hidden p-10 shadow-sm rounded-lg">

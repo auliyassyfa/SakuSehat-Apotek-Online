@@ -37,7 +37,6 @@
         Results
       </p>
       <div class="flex flex-col gap-4">
-        <!-- Softovac Rami -->
          @forelse ($products as $product)
         <div class="py-3.5 pl-4 pr-[22px] bg-white rounded-2xl flex gap-1 items-center relative">
           <img src="{{Storage::url($product->photo)}}" class="w-full max-w-[70px] max-h-[70px] object-contain"

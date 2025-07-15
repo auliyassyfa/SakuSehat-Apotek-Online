@@ -75,7 +75,6 @@
 			</div>
 		</nav>
 
-		<!-- Your last order -->
 		<section class="wrapper">
 			<div
 				class="flex justify-between gap-3 items-center bg-blue-200 py-1 px-4 rounded-2xl relative bg-left bg-no-repeat bg-cover ">
@@ -128,23 +127,6 @@
 				@empty
 				<p>belum ada produk tersedia.</p>
 				@endforelse
-			</div>
-		</section>
-
-		<!-- Explore -->
-		<section class="wrapper">
-			<div class="bg-lilac py-3.5 px-5 rounded-2xl relative bg-right-bottom bg-no-repeat bg-auto">
-				<img src="{{asset('assets/svgs/cloud.svg')}}" class="-ml-1.5 mb-1.5" alt="">
-				<div class="flex flex-col gap-4 mb-[23px]">
-					<p class="text-base font-bold">
-						Explore great doctors <br>
-						for your better life
-					</p>
-					<a href="#"
-						class="rounded-full bg-white text-primary flex w-max gap-2.5 px-6 py-2 justify-center items-center text-base font-bold">
-						Explore
-					</a>
-				</div>
 			</div>
 		</section>
 
